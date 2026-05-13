@@ -2,8 +2,8 @@ document.querySelector("#pobierz").addEventListener("click", function() {
   let miasto = document.querySelector("#miasto");
   const dzisiaj = new Date().toLocaleDateString("pl-PL");
   const dzisiejsze = document.getElementById("dzisiaj");
-  let req = new XMLHttpRequest();
 
+  let req = new XMLHttpRequest();
   req.open("GET", `https://api.openweathermap.org/data/2.5/weather?q=${miasto.value}&appid=ef1ebf3ae83ab9acb9c52e0883a05cd0&units=metric&lang=pl`);
   req.addEventListener("load", function(event) {
     let data = JSON.parse(event.target.responseText);
@@ -15,6 +15,8 @@ document.querySelector("#pobierz").addEventListener("click", function() {
     dzisiejsze.appendChild(loczekBloczek);
   })
   req.send(null);
+
+  
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${miasto.value}&appid=ef1ebf3ae83ab9acb9c52e0883a05cd0&units=metric&lang=pl`)
     .then(response => response.json())
     .then((data) => {
