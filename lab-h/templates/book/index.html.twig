@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Book index{% endblock %}
+
+{% block body %}
+    <h1>Book index</h1>
+
+    <table class="table align-middle">
+        <thead class="d-none d-lg-table-header-group table-dark">
+            <tr>
+                <th style="width: 10%">Id</th>
+                <th style="width: 45%">Title</th>
+                <th style="width: 25%">Author</th>
+                <th style="width: 20%" class="text-end">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr class="d-flex flex-column d-lg-table-row border rounded-3">
+                <td class="p-1 p-lg-3">
+                    <strong class="d-lg-none">Id:</strong>
+                    {{ book.id }}
+                </td>
+                <td class="p-1 p-lg-3">
+                    <strong class="d-lg-none">Title:</strong>
+                    <span class="fw-bold fw-lg-normal text-dark">{{ book.title }}</span>
+                </td>
+                <td class="p-1 p-lg-3">
+                    <strong class="d-lg-none">Author:</strong>
+                    <span class="text-secondary text-dark">{{ book.author }}</span>
+                </td>
+                <td class="p-1 p-lg-3">
+                    <strong class="d-lg-none layout-label">Actions:</strong>
+                    <div class="d-grid gap-1 d-lg-inline-flex justify-content-lg-end">
+                        <a class="btn btn-outline-primary" href="{{ path('app_book_show', {'id': book.id}) }}">show</a>
+                        <a class="btn btn-outline-secondary" href="{{ path('app_book_edit', {'id': book.id}) }}">edit</a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_book_new') }}">Create new</a>
+{% endblock %}
