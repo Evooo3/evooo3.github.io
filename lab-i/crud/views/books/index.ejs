@@ -1,0 +1,17 @@
+<%- include('start.ejs')%>
+
+    <a href="/books/create">Create new</a>
+
+    <ul class="index-list">
+        <% books.forEach(function(book) { %>
+            <li>
+                <h3><%= book.title%></h3>
+                <h4><%= book.author%></h4>
+                <ul class="action-list">
+                    <li><a href="/books/<%= book.id %>">Details</a></li>
+                    <li><a href="/books/<%= book.id %>/edit">Edit</a></li>
+                </ul>
+            </li>
+        <% }); %>
+    </ul>
+<%- include('end.ejs')%>

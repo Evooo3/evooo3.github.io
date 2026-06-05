@@ -1,0 +1,11 @@
+<%- include('start.ejs')%>
+
+    <article>
+        <%= book.author%>
+    </article>
+
+    <ul class="action-list">
+        <li><a href="/books">Back to list</a></li>
+        <li><a href="/books/<%= book.id %>/edit">Edit</a></li>
+    </ul>
+<%- include('end.ejs')%>
