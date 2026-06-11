@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/dist/style.min.css') }}">
+</head>
+<body>
+<main>
+    <h1>{{ title }}</h1>
+    {% block content%}{% endblock %}
+</main>
+</body>
+</html>

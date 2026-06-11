@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <article>
+        {{ book.author }}
+    </article>
+
+    <ul class="action-list">
+        <li><a href="{{url_for('index')}}">Back to list</a></li>
+        <li><a href="{{ url_for('edit', id=book.id) }}">Edit</a></li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<a href="{{ url_for('create') }}">Create new</a>
+
+<ul class="index-list">
+    {% for book in books %}
+        <li>
+            <h3>{{ book.title }}</h3>
+            <h4>{{ book.author }}</h4>
+            <ul class="action-list">
+                <a href="{{ url_for('show', id=book.id) }}">Details</a> |
+                <a href="{{ url_for('edit', id=book.id) }}">Edit</a>
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
