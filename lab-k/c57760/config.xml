@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.apache.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Szymon 57760</name>
+    <description>
+        Weather App
+    </description>
+    <author email="ss57760@zut.edu.pl" href="https://www.wi.zut.edu.pl">
+        Szymon Szymaniec
+    </author>
+    <content src="weather.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    
+    <platform name="electron">
+    <icon src="res/electron/logo.png" />
+    <preference name="ElectronSettingsFilePath" value="res/electron/settings.json" />
+    </platform>
+</widget>
+
